@@ -15,14 +15,14 @@ import os
 #this just adds the markets to thhe game['broadcast'] dictionary and game['home']['market'] and game['away']['market'] dictionaries
 
 #Change according to your path
-csv_data1 = '/Users/adelaidegilley/Downloads/ZoomphCRS/nfl/nfl-data/NFL_market_broadcastcsv.csv'
-csv_data = pd.read_csv(csv_data1)
+NFL_market_broadcastcsv = '/Users/....'
+csv_data = pd.read_csv(NFL_market_broadcastcsv)
 
 
 team_market_mapping = dict(zip(csv_data['Team'], csv_data['Market']))
 
-# Specify the JSON file path
-json_file_path = '/Users/adelaidegilley/Downloads/ZoomphCRS/nfl/nfl-data'
+# Specify the JSON file path 
+json_file_path = '/Users/...'
 
 # Read the JSON file
 with open(os.path.join(json_file_path, 'NFLSchedulePre2023.json'), 'r') as file:
@@ -62,7 +62,7 @@ with open(new_json_file_path, 'w') as file:
 #-------------------
 #this second part adds the call sign and channel id from the csv to the json file, it passes any cases there is no network because some preseason games didnt indicate one
 # Specify the JSON file path, change accordingly
-json_file_path = '/Users/adelaidegilley/Downloads/ZoomphCRS/nfl/nfl-data'
+json_file_path = '/Users/...'
 
 # Read the JSON file
 with open(os.path.join(json_file_path, 'NFLSchedulePre2023-2.json'), 'r') as json_file:
@@ -107,7 +107,7 @@ with open(os.path.join(json_file_path, 'NFLSchedulePre2023-2.json'), 'w') as jso
 # %%
 #-------------------
 #change filepath to your own 
-filepath = '/Users/adelaidegilley/Downloads/ZoomphCRS/nfl/nfl-data/NFLSchedulePre2023-2.json'
+filepath = '/Users/....'
 
 def load_nfl_pre_full(filepath):
     pre_list = []
@@ -202,7 +202,7 @@ df = pd.DataFrame(game_details, columns=["Week", "Location", "Parent Channel", "
 # Print the DataFrame
 #print(df)
 
-# Save the DataFrame to a CSV file
+# Save the DataFrame to a CSV file, for your specified week
 #df.to_csv(f"NFLPreseasonWeek{week_number}.csv", index=False)
 df.to_csv("Preseason-Schedules/NFLPreseasonWeek{}.csv".format(week_number), index=False)
 #-------------------
